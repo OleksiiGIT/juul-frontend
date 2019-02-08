@@ -1,0 +1,533 @@
+/*  BASE STYLES */
+@font-face {
+  font-family: 'Bold';
+  src: url("../fonts/Montserrat-Bold.otf") format("opentype"), url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Sans';
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Sans-light';
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bold', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+h1, h2 {
+  font-size: 82px;
+  color: white;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: 'Sans-light', sans-serif;
+  font-size: 36px;
+  color: white; }
+
+h4 {
+  font-size: 30px; }
+
+h5 {
+  font-size: 24px; }
+
+p, a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Sans', sans-serif; }
+  p:hover, a:hover {
+    text-decoration: none;
+    outline: none; }
+
+.navP {
+  color: #535353;
+  text-transform: uppercase; }
+
+a.primaryBtn {
+  color: #33ccff;
+  text-transform: uppercase;
+  padding-left: 60px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+  a.primaryBtn:before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #33ccff;
+    position: absolute;
+    left: 0;
+    top: 13px;
+    -webkit-transition: width 0.3s ease-out;
+    -o-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out; }
+  a.primaryBtn:hover:before {
+    width: 40px; }
+
+.circleBg {
+  width: 1200px;
+  height: 1200px;
+  background: #333333;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  position: absolute;
+  z-index: -1; }
+
+main .section {
+  height: 100vh;
+  background: #1e1e1e;
+  position: relative;
+  z-index: 100;
+  overflow: hidden; }
+  main .section:last-child {
+    background: white; }
+
+header {
+  padding: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 200;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%; }
+  header .logo a {
+    text-transform: uppercase;
+    color: #33ccff;
+    font-size: 30px;
+    font-family: 'Bold', sans-serif; }
+
+#fp-nav {
+  z-index: 200; }
+  #fp-nav.my-nav {
+    right: 55px; }
+    #fp-nav.my-nav ul li {
+      width: 20px;
+      height: 25px; }
+      #fp-nav.my-nav ul li a:hover {
+        color: #33ccff; }
+      #fp-nav.my-nav ul li a.active {
+        color: #33ccff !important;
+        position: relative; }
+        #fp-nav.my-nav ul li a.active:hover:after {
+          width: 50px; }
+        #fp-nav.my-nav ul li a.active:hover span {
+          margin: 0; }
+        #fp-nav.my-nav ul li a.active:after {
+          content: '';
+          width: 60px;
+          height: 1px;
+          background: #33ccff;
+          position: absolute;
+          right: -70px;
+          top: 13px;
+          -webkit-transition: width 0.3s ease-out;
+          -o-transition: width 0.3s ease-out;
+          transition: width 0.3s ease-out; }
+      #fp-nav.my-nav ul li a .fp-sr-only {
+        clip: unset;
+        overflow: visible;
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+        background: none;
+        display: block;
+        position: static !important; }
+      #fp-nav.my-nav ul li a span {
+        margin: 0;
+        display: none; }
+
+.scrollDowmLine {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 60px;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  cursor: pointer; }
+  .scrollDowmLine span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    background: white;
+    -webkit-animation: mymove 2s infinite;
+            animation: mymove 2s infinite; }
+
+@-webkit-keyframes mymove {
+  from {
+    height: 30px; }
+  to {
+    height: 50px; } }
+
+@keyframes mymove {
+  from {
+    height: 30px; }
+  to {
+    height: 50px; } }
+
+.bottomNavigation {
+  position: absolute;
+  bottom: 60px;
+  padding: 0 60px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .bottomNavigation div {
+    color: #535353;
+    cursor: pointer; }
+
+.fullpageInit .section:first-child .bottomNavigation {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+/*  FIRST SCREEN CSS */
+.mainScreenWrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .mainScreenWrapper .mainScreenInfo {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 330px; }
+    .mainScreenWrapper .mainScreenInfo a {
+      width: 200px; }
+  .mainScreenWrapper .mainScreenImg {
+    position: relative;
+    z-index: 100; }
+  .mainScreenWrapper .circleBg {
+    right: -370px;
+    top: -570px; }
+
+/*  SECOND SCREEN CSS */
+.secondScreenWrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .secondScreenWrapper .circleBg {
+    left: -370px;
+    bottom: -570px; }
+  .secondScreenWrapper .secondScreenInfo .flexibleContent {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    width: 600px;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      -webkit-box-align: start;
+      -webkit-align-items: flex-start;
+          -ms-flex-align: start;
+              align-items: flex-start; }
+      .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding-top: 60px; }
+        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemImg {
+          margin-right: 20px;
+          width: 40px;
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center; }
+        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemTitle {
+          color: #33ccff; }
+        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemText {
+          font-family: 'Sans-light', sans-serif; }
+
+/*  THIRD SCREEN CSS */
+.thirdScreenWrapper .circleBg {
+  left: -370px;
+  top: -630px; }
+
+.thirdScreenWrapper .thirdScreenInfo {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+    width: 100%;
+    padding-top: 150px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy h2 {
+      margin-bottom: 60px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy p {
+      width: 350px; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-top: 150px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+      color: #33ccff;
+      width: 350px;
+      margin-bottom: 60px;
+      margin-top: 15px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p {
+      width: 350px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      padding-top: 60px;
+      width: 350px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-family: 'Bold', sans-serif;
+        font-size: 60px;
+        color: #33ccff;
+        margin-right: 30px;
+        width: auto; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock a {
+        width: 160px;
+        color: white;
+        background: #33ccff;
+        text-transform: uppercase;
+        font-size: 24px;
+        font-family: 'Bold', sans-serif;
+        text-align: center;
+        padding: 10px 0; }
+
+.fourthScreenWrapper {
+  text-align: center; }
+  .fourthScreenWrapper h2 {
+    color: black;
+    margin-bottom: 60px; }
+  .fourthScreenWrapper .socials {
+    margin-bottom: 60px; }
+    .fourthScreenWrapper .socials h5 {
+      margin-bottom: 30px; }
+    .fourthScreenWrapper .socials .socialImgs {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 170px;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 0 auto; }
+  .fourthScreenWrapper .subscribeBlock h5 {
+    margin-bottom: 30px; }
+  .fourthScreenWrapper .subscribeBlock input {
+    width: 380px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    outline: none; }
+    .fourthScreenWrapper .subscribeBlock input::-webkit-input-placeholder {
+      font-family: 'Sans', sans-serif;
+      font-size: 18px;
+      color: #cccccc; }
+    .fourthScreenWrapper .subscribeBlock input::-moz-placeholder {
+      font-family: 'Sans', sans-serif;
+      font-size: 18px;
+      color: #cccccc; }
+    .fourthScreenWrapper .subscribeBlock input::-ms-input-placeholder {
+      font-family: 'Sans', sans-serif;
+      font-size: 18px;
+      color: #cccccc; }
+    .fourthScreenWrapper .subscribeBlock input::placeholder {
+      font-family: 'Sans', sans-serif;
+      font-size: 18px;
+      color: #cccccc; }
+  .fourthScreenWrapper .subscribeBlock button {
+    padding: 21px 20px 19px 20px;
+    color: white;
+    background: #33ccff;
+    border: none;
+    border: 1px solid #cccccc;
+    margin-left: -6px;
+    text-transform: uppercase;
+    font-family: 'Bold', sans-serif; }
+  .fourthScreenWrapper .subscribeBlock div {
+    font-size: 14px;
+    font-family: 'Sans', sans-serif;
+    margin-top: 20px; }
+    .fourthScreenWrapper .subscribeBlock div a {
+      font-size: 14px;
+      color: black;
+      border-bottom: 1px solid black; }
+
+.copyrightBlock {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  text-align: center;
+  color: #999999;
+  font-size: 14px; }

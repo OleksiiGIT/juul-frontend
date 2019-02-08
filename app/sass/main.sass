@@ -1,0 +1,479 @@
+$color: #33ccff
+$background: #1e1e1e
+$circle: #333333
+$nav: #535353
+$text: #878787
+$lightgrey: #999999
+$border: #cccccc
+
+/*  BASE STYLES */
+
+@font-face
+  font-family: 'Bold'
+  src: url("../fonts/Montserrat-Bold.otf") format("opentype"), url("../fonts/Montserrat-Bold.ttf") format("truetype")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Sans'
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype")
+  font-weight: normal
+  font-style: normal
+
+@font-face
+  font-family: 'Sans-light'
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype")
+  font-weight: normal
+  font-style: normal
+
+body
+  margin: 0
+  padding: 0
+  font-size: 18px
+
+h1, h2, h3, h4, h5, h6
+  font-family: 'Bold', sans-serif
+  margin: 0
+  padding: 0
+
+h1, h2
+  font-size: 82px
+  color: white
+  text-transform: uppercase
+
+h3
+  font-family: 'Sans-light', sans-serif
+  font-size: 36px
+  color: white
+
+h4
+  font-size: 30px
+
+h5
+  font-size: 24px
+
+p, a
+  color: white
+  text-decoration: none
+  margin: 0
+  padding: 0
+  font-size: 18px
+  font-family: 'Sans', sans-serif
+
+  &:hover
+    text-decoration: none
+    outline: none
+
+.navP
+  color: $nav
+  text-transform: uppercase
+
+a
+
+  &.primaryBtn
+    color: $color
+    text-transform: uppercase
+    padding-left: 60px
+    position: relative
+    transition: all 0.3s ease-out
+
+    &:before
+      content: ''
+      width: 50px
+      height: 1px
+      background: $color
+      position: absolute
+      left: 0
+      top: 13px
+      transition: width 0.3s ease-out
+
+    &:hover
+
+      &:before
+        width: 40px
+
+.circleBg
+  width: 1200px
+  height: 1200px
+  background: $circle
+  border-radius: 100%
+  position: absolute
+  z-index: -1
+
+main
+
+  .section
+    height: 100vh
+    background: $background
+    position: relative
+    z-index: 100
+    overflow: hidden
+
+    &:last-child
+      background: white
+
+header
+  padding: 60px
+  position: fixed
+  top: 0
+  z-index: 200
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: space-between
+  width: 100%
+
+  .logo
+
+    a
+      text-transform: uppercase
+      color: $color
+      font-size: 30px
+      font-family: 'Bold', sans-serif
+
+#fp-nav
+  z-index: 200
+
+  &.my-nav
+    right: 55px
+
+    ul 
+
+      li 
+        width: 20px
+        height: 25px
+
+        a
+
+          &:hover
+            color: $color
+
+          &.active
+            color: $color !important
+            position: relative
+
+            &:hover
+
+              &:after
+                width: 50px
+              
+              span
+                margin: 0
+
+            &:after
+              content: ''
+              width: 60px
+              height: 1px
+              background: $color
+              position: absolute
+              right: -70px
+              top: 13px
+              transition: width 0.3s ease-out
+
+          .fp-sr-only
+            clip: unset
+            overflow: visible
+            font-family: 'Sans', sans-serif
+            font-size: 18px
+            width: 100%
+            height: 100%
+            background: none
+            display: block
+            position: static !important
+
+          span
+            margin: 0
+            display: none
+
+.scrollDowmLine
+  left: 50%
+  transform: translateX(-50%)
+  bottom: 60px
+  width: 100px
+  height: 50px
+  position: absolute
+  cursor: pointer
+
+  span
+    display: block
+    position: absolute
+    left: 50%
+    width: 1px
+    background: white
+    animation: mymove 2s infinite
+
+@keyframes mymove
+    from 
+      height: 30px
+    to 
+      height: 50px
+
+.bottomNavigation
+  position: absolute
+  bottom: 60px
+  padding: 0 60px
+  width: 100%
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: space-between
+
+  div
+    color: $nav
+    cursor: pointer
+
+.fullpageInit
+
+  .section
+
+    &:first-child
+
+      .bottomNavigation
+        justify-content: flex-end
+
+/*  FIRST SCREEN CSS */
+
+.mainScreenWrapper
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .mainScreenInfo
+    width: 100%
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 330px
+
+    a
+      width: 200px
+
+  .mainScreenImg
+    position: relative
+    z-index: 100
+
+  .circleBg
+    right: -370px
+    top: -570px
+    
+/*  SECOND SCREEN CSS */
+
+.secondScreenWrapper
+  display: -webkit-flex
+  display: -moz-flex
+  display: -ms-flex
+  display: -o-flex
+  display: flex
+  justify-content: space-around
+  align-items: center
+
+  .circleBg
+    left: -370px
+    bottom: -570px
+
+  .secondScreenInfo
+
+    .flexibleContent
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      flex-direction: row
+      width: 600px
+      justify-content: space-between
+
+      .flexibleRows
+        display: -webkit-flex
+        display: -moz-flex
+        display: -ms-flex
+        display: -o-flex
+        display: flex
+        flex-direction: column
+        justify-content: flex-start
+        align-items: flex-start
+
+        .flexibleItem
+          display: -webkit-flex
+          display: -moz-flex
+          display: -ms-flex
+          display: -o-flex
+          display: flex
+          flex-direction: row
+          align-items: center
+          padding-top: 60px
+
+          .flexibleItemImg
+            margin-right: 20px
+            width: 40px
+            display: -webkit-flex
+            display: -moz-flex
+            display: -ms-flex
+            display: -o-flex
+            display: flex
+            justify-content: center
+
+          .flexibleItemDesc
+
+            .flexibleItemTitle
+              color: $color
+
+            .flexibleItemText
+              font-family: 'Sans-light', sans-serif
+
+/*  THIRD SCREEN CSS */
+
+.thirdScreenWrapper
+
+  .circleBg
+    left: -370px
+    top: -630px
+
+  .thirdScreenInfo
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+
+    .thirdScreenWhereToBuy
+      width: 100%
+      padding-top: 150px
+      
+      h2
+        margin-bottom: 60px
+
+      p
+        width: 350px
+
+    .thirdScreenBuyBlock
+      width: 100%
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      flex-direction: column
+      align-items: flex-end
+      padding-top: 150px
+
+      h5
+        color: $color
+        width: 350px
+        margin-bottom: 60px
+        margin-top: 15px
+
+      p
+        width: 350px
+
+      .priceAndBuyBlock
+        display: -webkit-flex
+        display: -moz-flex
+        display: -ms-flex
+        display: -o-flex
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: flex-start
+        padding-top: 60px
+        width: 350px
+
+        p
+          font-family: 'Bold', sans-serif
+          font-size: 60px
+          color: $color
+          margin-right: 30px
+          width: auto
+
+        a
+          width: 160px
+          color: white
+          background: $color
+          text-transform: uppercase
+          font-size: 24px
+          font-family: 'Bold', sans-serif
+          text-align: center
+          padding: 10px 0
+
+.fourthScreenWrapper
+  text-align: center
+
+  h2
+    color: black
+    margin-bottom: 60px
+
+  .socials
+    margin-bottom: 60px
+
+    h5
+      margin-bottom: 30px
+
+    .socialImgs
+      display: -webkit-flex
+      display: -moz-flex
+      display: -ms-flex
+      display: -o-flex
+      display: flex
+      justify-content: space-between
+      width: 170px
+      align-items: center
+      margin: 0 auto
+
+  .subscribeBlock
+
+    h5
+      margin-bottom: 30px
+
+    input
+      width: 380px
+      padding: 20px
+      border: 1px solid $border
+      outline: none
+
+      &::placeholder
+        font-family: 'Sans', sans-serif
+        font-size: 18px
+        color: $border
+
+    button
+      padding: 21px 20px 19px 20px
+      color: white
+      background: $color
+      border: none
+      border: 1px solid $border
+      margin-left: -6px
+      text-transform: uppercase
+      font-family: 'Bold', sans-serif
+
+    div
+      font-size: 14px
+      font-family: 'Sans', sans-serif
+      margin-top: 20px
+
+      a
+        font-size: 14px
+        color: black
+        border-bottom: 1px solid black
+
+.copyrightBlock
+  position: absolute
+  bottom: 60px
+  left: 50%
+  transform: translateX(-50%)
+  text-align: center
+  color: $lightgrey
+  font-size: 14px

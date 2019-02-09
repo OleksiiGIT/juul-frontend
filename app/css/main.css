@@ -486,7 +486,12 @@ header {
     width: 380px;
     padding: 20px;
     border: 1px solid #cccccc;
-    outline: none; }
+    outline: none;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    -webkit-border-radius: 0;
+            border-radius: 0; }
     .fourthScreenWrapper .subscribeBlock input::-webkit-input-placeholder {
       font-family: 'Sans', sans-serif;
       font-size: 18px;

@@ -1,4 +1,158 @@
-body
-  padding: 0
-  margin: 0
+@media (max-width: 991px)
+	
+	#fp-nav
+		display: none
 
+	header
+		padding: 20px
+		display: none
+
+	h1, h2
+		font-size: 40px
+
+	h3
+		font-size: 26px
+
+	.scrollDowmLine, .bottomNavigation
+		display: none
+
+	.circleBg
+		width: 900px
+		height: 900px
+
+	.mainScreenWrapper
+		flex-direction: column
+
+		.circleBg
+			right: -520px
+			top: -400px
+
+		.mainScreenInfo
+			height: auto
+			text-align: center
+
+			h3
+				margin-top: 20px
+
+			a
+				margin-top: 20px
+				width: 100%
+
+				&:before
+					left: calc(50% - 100px)
+
+		.mainScreenImg
+			margin-top: 40px
+
+			img
+				height: 300px
+
+	.secondScreenWrapper
+
+		.circleBg
+			left: -440px
+			bottom: -465px
+
+		.secondScreenImg
+
+			img
+				height: 300px
+
+		.secondScreenInfo
+
+			.flexibleContent
+				flex-direction: column
+				width: 100%
+
+				.flexibleRows
+
+					.flexibleItem
+						padding-top: 20px
+
+						p
+							font-size: 14px
+
+	.thirdScreenWrapper
+
+		.circleBg
+			left: -440px
+			top: -466px
+
+		.thirdScreenInfo
+			align-items: center
+
+			.thirdScreenWhereToBuy
+				display: none
+
+			.thirdScreenImg
+
+				img
+					height: 300px
+
+			.thirdScreenBuyBlock
+				padding-top: 0
+
+				h5
+					margin-top: 0
+					margin-bottom: 20px
+
+				p
+					font-size: 14px
+
+				.priceAndBuyBlock
+					padding-top: 20px
+
+	.fourthScreenWrapper
+
+		h2
+			margin-bottom: 20px
+
+		.socials
+			margin-bottom: 20px
+
+		.subscribeBlock
+
+			h5
+				font-size: 20px
+
+			input
+				width: auto
+
+	.copyrightBlock
+		bottom: 120px
+		width: 500px
+			
+@media (max-width: 520px)
+	
+	.copyrightBlock
+		position: static
+		transform: none
+		margin-top: 20px
+		width: 100%
+
+	.thirdScreenWrapper
+
+		.thirdScreenInfo
+			flex-direction: column
+
+			.thirdScreenBuyBlock
+				margin-top: 20px
+
+				h5, p, .priceAndBuyBlock
+					width: 100%
+
+				.priceAndBuyBlock
+					justify-content: space-between
+
+@media (max-width: 423px)
+	
+	.fourthScreenWrapper 
+
+		.subscribeBlock 
+
+			input
+				width: 100%
+
+			button
+				width: 100%
+				margin-left: 0

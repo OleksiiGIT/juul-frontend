@@ -1,0 +1,890 @@
+/*  BASE STYLES */
+@font-face {
+  font-family: 'Bold';
+  src: url("../fonts/Montserrat-Bold.otf") format("opentype"), url("../fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Sans';
+  src: url("../fonts/OpenSans-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Sans-light';
+  src: url("../fonts/OpenSans-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  overflow-x: hidden; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bold', sans-serif;
+  margin: 0;
+  padding: 0; }
+
+h1, h2 {
+  font-size: 82px;
+  color: white;
+  text-transform: uppercase; }
+
+h3 {
+  font-family: 'Sans-light', sans-serif;
+  font-size: 36px;
+  color: white; }
+
+h4 {
+  font-size: 30px; }
+
+h5 {
+  font-size: 24px; }
+
+p, a {
+  color: white;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  font-family: 'Sans', sans-serif; }
+  p:hover, a:hover {
+    text-decoration: none;
+    outline: none; }
+  p.buy, a.buy {
+    color: white;
+    background: #33ccff;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: 'Bold', sans-serif;
+    text-align: center;
+    padding: 10px 40px; }
+
+.navP {
+  color: #535353;
+  text-transform: uppercase; }
+
+a.primaryBtn {
+  color: #33ccff;
+  text-transform: uppercase;
+  padding-left: 60px;
+  position: relative;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out; }
+  a.primaryBtn:before {
+    content: '';
+    width: 50px;
+    height: 1px;
+    background: #33ccff;
+    position: absolute;
+    left: 0;
+    top: 13px;
+    -webkit-transition: width 0.3s ease-out;
+    -o-transition: width 0.3s ease-out;
+    transition: width 0.3s ease-out; }
+  a.primaryBtn:hover:before {
+    width: 40px; }
+
+.circleBg {
+  width: 1200px;
+  height: 1200px;
+  background: #333333;
+  -webkit-border-radius: 100%;
+          border-radius: 100%;
+  position: absolute;
+  z-index: 1; }
+
+main .section {
+  height: 100vh;
+  background: #1e1e1e; }
+  main .section:last-child {
+    background: white; }
+
+header {
+  width: 100%;
+  padding: 60px;
+  position: fixed;
+  top: 0;
+  z-index: 200; }
+  header .container-fluid {
+    padding: 0; }
+  header .headerWrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    header .headerWrapper .logo a {
+      text-transform: uppercase;
+      color: #33ccff;
+      font-size: 30px;
+      font-family: 'Bold', sans-serif; }
+
+#fp-nav {
+  z-index: 200; }
+  #fp-nav.my-nav {
+    right: 55px; }
+    #fp-nav.my-nav ul li {
+      width: 20px;
+      height: 25px; }
+      #fp-nav.my-nav ul li a:hover {
+        color: #33ccff; }
+      #fp-nav.my-nav ul li a.active {
+        color: #33ccff !important;
+        position: relative; }
+        #fp-nav.my-nav ul li a.active:hover:after {
+          width: 50px; }
+        #fp-nav.my-nav ul li a.active:hover span {
+          margin: 0; }
+        #fp-nav.my-nav ul li a.active:after {
+          content: '';
+          width: 60px;
+          height: 1px;
+          background: #33ccff;
+          position: absolute;
+          right: -70px;
+          top: 13px;
+          -webkit-transition: width 0.3s ease-out;
+          -o-transition: width 0.3s ease-out;
+          transition: width 0.3s ease-out; }
+      #fp-nav.my-nav ul li a .fp-sr-only {
+        clip: unset;
+        overflow: visible;
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        width: 100%;
+        height: 100%;
+        background: none;
+        display: block;
+        position: static !important; }
+      #fp-nav.my-nav ul li a span {
+        margin: 0;
+        display: none; }
+
+.scrollDowmLine {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 60px;
+  width: 100px;
+  height: 50px;
+  position: absolute;
+  cursor: pointer;
+  z-index: 10; }
+  .scrollDowmLine span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    width: 1px;
+    background: white;
+    -webkit-animation: mymove 2s infinite;
+            animation: mymove 2s infinite; }
+
+@-webkit-keyframes mymove {
+  from {
+    height: 30px; }
+  to {
+    height: 50px; } }
+
+@keyframes mymove {
+  from {
+    height: 30px; }
+  to {
+    height: 50px; } }
+
+.bottomNavigation {
+  position: absolute;
+  bottom: 60px;
+  z-index: 10;
+  padding: 0 60px;
+  width: 100%;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .bottomNavigation div {
+    color: #535353;
+    cursor: pointer; }
+
+.fullpageInit .section:first-child .bottomNavigation {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+/* Sweep To Right */
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+     transition-duration: 0.3s; }
+  .hvr-sweep-to-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2098D1;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+        transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+       transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+       transition-timing-function: ease-out; }
+  .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+    color: white; }
+  .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+        transform: scaleX(1); }
+
+/*  FIRST SCREEN CSS */
+.mainScreenWrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .mainScreenWrapper .mainScreenInfo {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 330px;
+    position: relative;
+    z-index: 10; }
+    .mainScreenWrapper .mainScreenInfo a {
+      width: 200px; }
+  .mainScreenWrapper .mainScreenImg {
+    position: relative;
+    z-index: 100; }
+  .mainScreenWrapper .circleBg {
+    right: -480px;
+    top: -600px; }
+
+/*  SECOND SCREEN CSS */
+@-webkit-keyframes movingImg {
+  0% {
+    top: -1000px; }
+  80% {
+    top: -45px; }
+  100% {
+    top: -85px; } }
+@keyframes movingImg {
+  0% {
+    top: -1000px; }
+  80% {
+    top: -45px; }
+  100% {
+    top: -85px; } }
+
+.secondScreenWrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .secondScreenWrapper .circleBg {
+    left: -370px;
+    bottom: -570px; }
+  .secondScreenWrapper .secondScreenImg {
+    position: relative;
+    padding-right: 20px;
+    position: relative;
+    z-index: 10; }
+    .secondScreenWrapper .secondScreenImg .movingImg {
+      position: absolute;
+      top: -85px;
+      left: 36px;
+      opacity: 0; }
+  .secondScreenWrapper .secondScreenInfo {
+    position: relative;
+    z-index: 10; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      width: 600px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows {
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start; }
+        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
+          display: -webkit-flex;
+          display: -moz-flex;
+          display: -ms-flex;
+          display: -o-flex;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          padding-top: 60px; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemImg {
+            margin-right: 20px;
+            width: 40px;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                    justify-content: center; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemTitle {
+            color: #33ccff; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemText {
+            font-family: 'Sans-light', sans-serif; }
+
+/*  THIRD SCREEN CSS */
+.thirdScreenWrapper .circleBg {
+  left: -370px;
+  top: -630px; }
+
+.thirdScreenWrapper .thirdScreenInfo {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  z-index: 10; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+    text-align: center; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
+      height: 90%;
+      padding-top: 40px; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+    width: 100%;
+    padding-top: 150px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy h2 {
+      margin-bottom: 60px; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+    width: 100%;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-top: 150px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+      color: #33ccff;
+      margin-bottom: 60px;
+      margin-top: 15px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: start;
+      -webkit-justify-content: flex-start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      padding-top: 60px;
+      width: 100%; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-family: 'Bold', sans-serif;
+        font-size: 60px;
+        color: #33ccff;
+        margin-right: 30px;
+        width: auto; }
+
+.fourthScreenWrapper {
+  text-align: center; }
+  .fourthScreenWrapper h2 {
+    color: black;
+    margin-bottom: 60px; }
+  .fourthScreenWrapper .socials {
+    margin-bottom: 60px; }
+    .fourthScreenWrapper .socials h5 {
+      margin-bottom: 30px; }
+    .fourthScreenWrapper .socials .socialImgs {
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 170px;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+      margin: 0 auto; }
+  .fourthScreenWrapper .subscribeBlock h5 {
+    margin-bottom: 30px; }
+  .fourthScreenWrapper .subscribeBlock .relative {
+    position: relative; }
+    .fourthScreenWrapper .subscribeBlock .relative input {
+      width: 380px;
+      padding: 20px;
+      border: 1px solid #cccccc;
+      outline: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      margin-left: -140px; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-webkit-input-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-moz-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-ms-input-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+    .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 20px;
+      color: white;
+      background: #33ccff;
+      border: none;
+      border: 1px solid #cccccc;
+      margin-left: -6px;
+      text-transform: uppercase;
+      font-family: 'Bold', sans-serif;
+      outline: none;
+      position: absolute; }
+  .fourthScreenWrapper .subscribeBlock .underInput {
+    font-size: 14px;
+    font-family: 'Sans', sans-serif;
+    margin-top: 20px; }
+    .fourthScreenWrapper .subscribeBlock .underInput a {
+      font-size: 14px;
+      color: black;
+      border-bottom: 1px solid black; }
+
+.copyrightBlock {
+  margin-top: 30px;
+  text-align: center;
+  color: #999999;
+  font-size: 14px; }
+
+@media (max-width: 1199px) {
+  @-webkit-keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 24px; }
+    100% {
+      top: -10px; } }
+  @keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 24px; }
+    100% {
+      top: -10px; } }
+  #fp-nav {
+    display: none; }
+  header {
+    padding: 15px; }
+  .scrollDowmLine {
+    bottom: 15px; }
+  .bottomNavigation {
+    bottom: 15px;
+    padding: 0 15px; }
+  .mainScreenWrapper .mainScreenInfo {
+    height: auto;
+    width: auto;
+    padding-right: 50px; }
+    .mainScreenWrapper .mainScreenInfo h1 {
+      font-size: 42px; }
+    .mainScreenWrapper .mainScreenInfo h3 {
+      font-size: 28px;
+      margin-top: 10px;
+      margin-bottom: 20px; }
+  .secondScreenWrapper .secondScreenImg {
+    padding-top: 60px; }
+    .secondScreenWrapper .secondScreenImg img {
+      height: 400px; }
+      .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 28px;
+        top: -10px; }
+  .secondScreenWrapper .secondScreenInfo h2 {
+    font-size: 42px; }
+  .secondScreenWrapper .secondScreenInfo .flexibleContent {
+    width: auto; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+      padding-left: 20px; }
+  .thirdScreenWrapper .thirdScreenInfo {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+      padding-top: 50px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy h2 {
+        font-size: 42px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+      padding: 0 20px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
+        height: 500px;
+        padding-top: 0; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+      padding-top: 50px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+        margin-top: 0; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-size: 42px;
+        margin-right: 10px; } }
+
+@media (max-width: 767px) {
+  @-webkit-keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 52px; }
+    100% {
+      top: 25px; } }
+  @keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 52px; }
+    100% {
+      top: 25px; } }
+  a.buy {
+    font-size: 18px;
+    padding: 5px 30px; }
+  header .logo a {
+    font-size: 20px; }
+  h1, h2 {
+    font-size: 30px; }
+  h3 {
+    font-size: 20px; }
+  .scrollDowmLine, .bottomNavigation {
+    bottom: 20px;
+    height: 30px;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 0 20px; }
+  .circleBg {
+    width: 900px;
+    height: 900px; }
+  .mainScreenWrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .mainScreenWrapper .circleBg {
+      right: -520px;
+      top: -400px; }
+    .mainScreenWrapper .mainScreenInfo {
+      height: auto;
+      text-align: center;
+      padding-right: 0; }
+      .mainScreenWrapper .mainScreenInfo h1 {
+        font-size: 32px; }
+      .mainScreenWrapper .mainScreenInfo h3 {
+        margin-top: 10px;
+        font-size: 26px; }
+      .mainScreenWrapper .mainScreenInfo a {
+        margin-top: 10px;
+        width: 100%;
+        display: none; }
+        .mainScreenWrapper .mainScreenInfo a:before {
+          left: -webkit-calc(50% - 100px);
+          left: calc(50% - 100px); }
+    .mainScreenWrapper .mainScreenImg {
+      margin-top: 10px; }
+      .mainScreenWrapper .mainScreenImg img {
+        height: 250px; }
+  .secondScreenWrapper .circleBg {
+    left: -440px;
+    bottom: -465px; }
+  .secondScreenWrapper .secondScreenImg {
+    padding-top: 80px;
+    padding-right: 20px; }
+    .secondScreenWrapper .secondScreenImg img {
+      height: 300px; }
+      .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 20.7px;
+        top: 25px; }
+  .secondScreenWrapper .secondScreenInfo .flexibleContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+      padding-left: 0; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
+      padding-top: 20px; }
+      .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem p {
+        font-size: 12px; }
+  .thirdScreenWrapper .circleBg {
+    left: -440px;
+    top: -466px; }
+  .thirdScreenWrapper .thirdScreenInfo .row {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+    display: none; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+    padding-right: 20px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
+      height: 300px; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+    padding-top: 15px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p {
+      font-size: 14px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+      padding-top: 10px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-size: 25px; }
+  .fourthScreenWrapper h2 {
+    margin-bottom: 10px; }
+  .fourthScreenWrapper .socials {
+    margin-bottom: 10px; }
+    .fourthScreenWrapper .socials h5 {
+      margin-bottom: 10px; }
+  .fourthScreenWrapper .subscribeBlock h5 {
+    font-size: 18px;
+    margin-bottom: 10px; }
+  .fourthScreenWrapper .subscribeBlock .relative {
+    max-width: 400px;
+    margin: 0 auto; }
+    .fourthScreenWrapper .subscribeBlock .relative input {
+      width: 100%;
+      padding: 10px;
+      margin-left: 0; }
+    .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 10px;
+      position: static;
+      margin-left: 0;
+      width: 100%; }
+  .fourthScreenWrapper .subscribeBlock .underInput {
+    font-size: 12px; }
+    .fourthScreenWrapper .subscribeBlock .underInput a {
+      font-size: 12px; }
+  .copyrightBlock {
+    bottom: 120px;
+    width: 500px;
+    font-size: 8px; } }
+
+@media (max-width: 520px) {
+  .copyrightBlock {
+    position: static;
+    -webkit-transform: none;
+        -ms-transform: none;
+            transform: none;
+    margin-top: 20px;
+    width: 100%; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+    width: 100%; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; } }
+
+@media (max-width: 423px) {
+  .fourthScreenWrapper .subscribeBlock input {
+    width: 100%; }
+  .fourthScreenWrapper .subscribeBlock button {
+    width: 100%;
+    margin-left: 0; } }
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
+  .mainScreenWrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  main .section {
+    overflow: hidden; }
+    main .section .secondScreenWrapper .secondScreenImg img {
+      height: 200px; }
+      main .section .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 14px; }
+    main .section .secondScreenWrapper .secondScreenInfo .flexibleContent {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      main .section .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+        padding-left: 20px; }
+    main .section .copyrightBlock {
+      display: none; }
+    main .section .fourthScreenWrapper .subscribeBlock .relative input, main .section .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 5px 10px; } }

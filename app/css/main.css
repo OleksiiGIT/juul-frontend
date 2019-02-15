@@ -20,7 +20,8 @@
 body {
   margin: 0;
   padding: 0;
-  font-size: 18px; }
+  font-size: 18px;
+  overflow-x: hidden; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Bold', sans-serif;
@@ -53,6 +54,14 @@ p, a {
   p:hover, a:hover {
     text-decoration: none;
     outline: none; }
+  p.buy, a.buy {
+    color: white;
+    background: #33ccff;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-family: 'Bold', sans-serif;
+    text-align: center;
+    padding: 10px 40px; }
 
 .navP {
   color: #535353;
@@ -87,39 +96,43 @@ a.primaryBtn {
   -webkit-border-radius: 100%;
           border-radius: 100%;
   position: absolute;
-  z-index: -1; }
+  z-index: 1; }
 
 main .section {
   height: 100vh;
-  background: #1e1e1e;
-  position: relative;
-  z-index: 100;
-  overflow: hidden; }
+  background: #1e1e1e; }
   main .section:last-child {
     background: white; }
 
 header {
+  width: 100%;
   padding: 60px;
   position: fixed;
   top: 0;
-  z-index: 200;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%; }
-  header .logo a {
-    text-transform: uppercase;
-    color: #33ccff;
-    font-size: 30px;
-    font-family: 'Bold', sans-serif; }
+  z-index: 200; }
+  header .container-fluid {
+    padding: 0; }
+  header .headerWrapper {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    header .headerWrapper .logo a {
+      text-transform: uppercase;
+      color: #33ccff;
+      font-size: 30px;
+      font-family: 'Bold', sans-serif; }
 
 #fp-nav {
   z-index: 200; }
@@ -171,7 +184,8 @@ header {
   width: 100px;
   height: 50px;
   position: absolute;
-  cursor: pointer; }
+  cursor: pointer;
+  z-index: 10; }
   .scrollDowmLine span {
     display: block;
     position: absolute;
@@ -196,6 +210,7 @@ header {
 .bottomNavigation {
   position: absolute;
   bottom: 60px;
+  z-index: 10;
   padding: 0 60px;
   width: 100%;
   display: -webkit-flex;
@@ -218,6 +233,55 @@ header {
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end; }
+
+/* Sweep To Right */
+.hvr-sweep-to-right {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+          box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+     transition-duration: 0.3s; }
+  .hvr-sweep-to-right:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2098D1;
+    -webkit-transform: scaleX(0);
+    -ms-transform: scaleX(0);
+        transform: scaleX(0);
+    -webkit-transform-origin: 0 50%;
+    -ms-transform-origin: 0 50%;
+        transform-origin: 0 50%;
+    -webkit-transition-property: transform;
+    -webkit-transition-property: -webkit-transform;
+    transition-property: -webkit-transform;
+    -o-transition-property: transform;
+    transition-property: transform;
+    transition-property: transform, -webkit-transform;
+    -webkit-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+       transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    -o-transition-timing-function: ease-out;
+       transition-timing-function: ease-out; }
+  .hvr-sweep-to-right:hover, .hvr-sweep-to-right:focus, .hvr-sweep-to-right:active {
+    color: white; }
+  .hvr-sweep-to-right:hover:before, .hvr-sweep-to-right:focus:before, .hvr-sweep-to-right:active:before {
+    -webkit-transform: scaleX(1);
+    -ms-transform: scaleX(1);
+        transform: scaleX(1); }
 
 /*  FIRST SCREEN CSS */
 .mainScreenWrapper {
@@ -254,17 +318,34 @@ header {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-    height: 330px; }
+    height: 330px;
+    position: relative;
+    z-index: 10; }
     .mainScreenWrapper .mainScreenInfo a {
       width: 200px; }
   .mainScreenWrapper .mainScreenImg {
     position: relative;
     z-index: 100; }
   .mainScreenWrapper .circleBg {
-    right: -370px;
-    top: -570px; }
+    right: -480px;
+    top: -600px; }
 
 /*  SECOND SCREEN CSS */
+@-webkit-keyframes movingImg {
+  0% {
+    top: -1000px; }
+  80% {
+    top: -45px; }
+  100% {
+    top: -85px; } }
+@keyframes movingImg {
+  0% {
+    top: -1000px; }
+  80% {
+    top: -45px; }
+  100% {
+    top: -85px; } }
+
 .secondScreenWrapper {
   display: -webkit-flex;
   display: -moz-flex;
@@ -283,25 +364,20 @@ header {
   .secondScreenWrapper .circleBg {
     left: -370px;
     bottom: -570px; }
-  .secondScreenWrapper .secondScreenInfo .flexibleContent {
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: -o-flex;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 600px;
-    -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between; }
-    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows {
+  .secondScreenWrapper .secondScreenImg {
+    position: relative;
+    padding-right: 20px;
+    position: relative;
+    z-index: 10; }
+    .secondScreenWrapper .secondScreenImg .movingImg {
+      position: absolute;
+      top: -85px;
+      left: 36px;
+      opacity: 0; }
+  .secondScreenWrapper .secondScreenInfo {
+    position: relative;
+    z-index: 10; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent {
       display: -webkit-flex;
       display: -moz-flex;
       display: -ms-flex;
@@ -309,20 +385,17 @@ header {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      -webkit-box-orient: vertical;
+      -webkit-box-orient: horizontal;
       -webkit-box-direction: normal;
-      -webkit-flex-direction: column;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-pack: start;
-      -webkit-justify-content: flex-start;
-          -ms-flex-pack: start;
-              justify-content: flex-start;
-      -webkit-box-align: start;
-      -webkit-align-items: flex-start;
-          -ms-flex-align: start;
-              align-items: flex-start; }
-      .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      width: 600px;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows {
         display: -webkit-flex;
         display: -moz-flex;
         display: -ms-flex;
@@ -330,19 +403,20 @@ header {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
-        -webkit-box-orient: horizontal;
+        -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
-        -webkit-flex-direction: row;
-            -ms-flex-direction: row;
-                flex-direction: row;
-        -webkit-box-align: center;
-        -webkit-align-items: center;
-            -ms-flex-align: center;
-                align-items: center;
-        padding-top: 60px; }
-        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemImg {
-          margin-right: 20px;
-          width: 40px;
+        -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: start;
+        -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+                justify-content: flex-start;
+        -webkit-box-align: start;
+        -webkit-align-items: flex-start;
+            -ms-flex-align: start;
+                align-items: flex-start; }
+        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
           display: -webkit-flex;
           display: -moz-flex;
           display: -ms-flex;
@@ -350,14 +424,34 @@ header {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
-          -webkit-box-pack: center;
-          -webkit-justify-content: center;
-              -ms-flex-pack: center;
-                  justify-content: center; }
-        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemTitle {
-          color: #33ccff; }
-        .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemText {
-          font-family: 'Sans-light', sans-serif; }
+          -webkit-box-orient: horizontal;
+          -webkit-box-direction: normal;
+          -webkit-flex-direction: row;
+              -ms-flex-direction: row;
+                  flex-direction: row;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          padding-top: 60px; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemImg {
+            margin-right: 20px;
+            width: 40px;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                    justify-content: center; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemTitle {
+            color: #33ccff; }
+          .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem .flexibleItemDesc .flexibleItemText {
+            font-family: 'Sans-light', sans-serif; }
 
 /*  THIRD SCREEN CSS */
 .thirdScreenWrapper .circleBg {
@@ -380,14 +474,19 @@ header {
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
-          justify-content: space-between; }
+          justify-content: space-between;
+  position: relative;
+  z-index: 10; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+    text-align: center; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
+      height: 90%;
+      padding-top: 40px; }
   .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
     width: 100%;
     padding-top: 150px; }
     .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy h2 {
       margin-bottom: 60px; }
-    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy p {
-      width: 350px; }
   .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
     width: 100%;
     display: -webkit-flex;
@@ -409,11 +508,8 @@ header {
     padding-top: 150px; }
     .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
       color: #33ccff;
-      width: 350px;
       margin-bottom: 60px;
       margin-top: 15px; }
-    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p {
-      width: 350px; }
     .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
       display: -webkit-flex;
       display: -moz-flex;
@@ -436,22 +532,13 @@ header {
           -ms-flex-pack: start;
               justify-content: flex-start;
       padding-top: 60px;
-      width: 350px; }
+      width: 100%; }
       .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
         font-family: 'Bold', sans-serif;
         font-size: 60px;
         color: #33ccff;
         margin-right: 30px;
         width: auto; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock a {
-        width: 160px;
-        color: white;
-        background: #33ccff;
-        text-transform: uppercase;
-        font-size: 24px;
-        font-family: 'Bold', sans-serif;
-        text-align: center;
-        padding: 10px 0; }
 
 .fourthScreenWrapper {
   text-align: center; }
@@ -482,57 +569,57 @@ header {
       margin: 0 auto; }
   .fourthScreenWrapper .subscribeBlock h5 {
     margin-bottom: 30px; }
-  .fourthScreenWrapper .subscribeBlock input {
-    width: 380px;
-    padding: 20px;
-    border: 1px solid #cccccc;
-    outline: none;
-    -webkit-appearance: none;
-       -moz-appearance: none;
-            appearance: none;
-    -webkit-border-radius: 0;
-            border-radius: 0; }
-    .fourthScreenWrapper .subscribeBlock input::-webkit-input-placeholder {
-      font-family: 'Sans', sans-serif;
-      font-size: 18px;
-      color: #cccccc; }
-    .fourthScreenWrapper .subscribeBlock input::-moz-placeholder {
-      font-family: 'Sans', sans-serif;
-      font-size: 18px;
-      color: #cccccc; }
-    .fourthScreenWrapper .subscribeBlock input::-ms-input-placeholder {
-      font-family: 'Sans', sans-serif;
-      font-size: 18px;
-      color: #cccccc; }
-    .fourthScreenWrapper .subscribeBlock input::placeholder {
-      font-family: 'Sans', sans-serif;
-      font-size: 18px;
-      color: #cccccc; }
-  .fourthScreenWrapper .subscribeBlock button {
-    padding: 21px 20px 19px 20px;
-    color: white;
-    background: #33ccff;
-    border: none;
-    border: 1px solid #cccccc;
-    margin-left: -6px;
-    text-transform: uppercase;
-    font-family: 'Bold', sans-serif; }
-  .fourthScreenWrapper .subscribeBlock div {
+  .fourthScreenWrapper .subscribeBlock .relative {
+    position: relative; }
+    .fourthScreenWrapper .subscribeBlock .relative input {
+      width: 380px;
+      padding: 20px;
+      border: 1px solid #cccccc;
+      outline: none;
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      -webkit-border-radius: 0;
+              border-radius: 0;
+      margin-left: -140px; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-webkit-input-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-moz-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::-ms-input-placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+      .fourthScreenWrapper .subscribeBlock .relative input::placeholder {
+        font-family: 'Sans', sans-serif;
+        font-size: 18px;
+        color: #cccccc; }
+    .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 20px;
+      color: white;
+      background: #33ccff;
+      border: none;
+      border: 1px solid #cccccc;
+      margin-left: -6px;
+      text-transform: uppercase;
+      font-family: 'Bold', sans-serif;
+      outline: none;
+      position: absolute; }
+  .fourthScreenWrapper .subscribeBlock .underInput {
     font-size: 14px;
     font-family: 'Sans', sans-serif;
     margin-top: 20px; }
-    .fourthScreenWrapper .subscribeBlock div a {
+    .fourthScreenWrapper .subscribeBlock .underInput a {
       font-size: 14px;
       color: black;
       border-bottom: 1px solid black; }
 
 .copyrightBlock {
-  position: absolute;
-  bottom: 60px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  margin-top: 30px;
   text-align: center;
   color: #999999;
   font-size: 14px; }

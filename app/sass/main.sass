@@ -30,6 +30,7 @@ body
   margin: 0
   padding: 0
   font-size: 18px
+  overflow-x: hidden
 
 h1, h2, h3, h4, h5, h6
   font-family: 'Bold', sans-serif
@@ -63,6 +64,15 @@ p, a
   &:hover
     text-decoration: none
     outline: none
+
+  &.buy
+    color: white
+    background: $color
+    text-transform: uppercase
+    font-size: 24px
+    font-family: 'Bold', sans-serif
+    text-align: center
+    padding: 10px 40px
 
 .navP
   color: $nav
@@ -98,40 +108,43 @@ a
   background: $circle
   border-radius: 100%
   position: absolute
-  z-index: -1
+  z-index: 1
 
 main
 
   .section
     height: 100vh
     background: $background
-    position: relative
-    z-index: 100
-    overflow: hidden
 
     &:last-child
       background: white
 
 header
+  width: 100%
   padding: 60px
   position: fixed
   top: 0
   z-index: 200
-  display: -webkit-flex
-  display: -moz-flex
-  display: -ms-flex
-  display: -o-flex
-  display: flex
-  justify-content: space-between
-  width: 100%
 
-  .logo
+  .container-fluid
+    padding: 0
 
-    a
-      text-transform: uppercase
-      color: $color
-      font-size: 30px
-      font-family: 'Bold', sans-serif
+  .headerWrapper
+    display: -webkit-flex
+    display: -moz-flex
+    display: -ms-flex
+    display: -o-flex
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    .logo
+
+      a
+        text-transform: uppercase
+        color: $color
+        font-size: 30px
+        font-family: 'Bold', sans-serif
 
 #fp-nav
   z-index: 200
@@ -195,6 +208,7 @@ header
   height: 50px
   position: absolute
   cursor: pointer
+  z-index: 10
 
   span
     display: block
@@ -213,6 +227,7 @@ header
 .bottomNavigation
   position: absolute
   bottom: 60px
+  z-index: 10
   padding: 0 60px
   width: 100%
   display: -webkit-flex
@@ -235,6 +250,46 @@ header
       .bottomNavigation
         justify-content: flex-end
 
+/* Sweep To Right */
+.hvr-sweep-to-right 
+  display: inline-block
+  vertical-align: middle
+  -webkit-transform: perspective(1px) translateZ(0)
+  transform: perspective(1px) translateZ(0)
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0)
+  position: relative
+  -webkit-transition-property: color
+  transition-property: color
+  -webkit-transition-duration: 0.3s
+  transition-duration: 0.3s
+
+  &:before 
+    content: ""
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: #2098D1
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    -webkit-transform-origin: 0 50%
+    transform-origin: 0 50%
+    -webkit-transition-property: transform
+    transition-property: transform
+    -webkit-transition-duration: 0.3s
+    transition-duration: 0.3s
+    -webkit-transition-timing-function: ease-out
+    transition-timing-function: ease-out
+
+  &:hover, &:focus, &:active
+    color: white
+
+  &:hover:before, &:focus:before, &:active:before
+    -webkit-transform: scaleX(1)
+    transform: scaleX(1)
+
 /*  FIRST SCREEN CSS */
 
 .mainScreenWrapper
@@ -256,6 +311,8 @@ header
     flex-direction: column
     justify-content: space-between
     height: 330px
+    position: relative
+    z-index: 10
 
     a
       width: 200px
@@ -265,10 +322,18 @@ header
     z-index: 100
 
   .circleBg
-    right: -370px
-    top: -570px
+    right: -480px
+    top: -600px
     
 /*  SECOND SCREEN CSS */
+
+@keyframes movingImg
+  0%
+    top: -1000px
+  80%
+    top: -45px
+  100%
+    top: -85px
 
 .secondScreenWrapper
   display: -webkit-flex
@@ -283,7 +348,22 @@ header
     left: -370px
     bottom: -570px
 
+  .secondScreenImg
+    position: relative
+    padding-right: 20px
+    position: relative
+    z-index: 10
+
+    .movingImg
+      position: absolute
+      top: -85px // finish pos
+      left: 36px
+      opacity: 0
+      // animation: movingImg 2s ease-out
+
   .secondScreenInfo
+    position: relative
+    z-index: 10
 
     .flexibleContent
       display: -webkit-flex
@@ -349,6 +429,15 @@ header
     display: flex
     flex-direction: row
     justify-content: space-between
+    position: relative
+    z-index: 10
+
+    .thirdScreenImg 
+      text-align: center
+
+      img
+        height: 90%
+        padding-top: 40px
 
     .thirdScreenWhereToBuy
       width: 100%
@@ -358,7 +447,6 @@ header
         margin-bottom: 60px
 
       p
-        width: 350px
 
     .thirdScreenBuyBlock
       width: 100%
@@ -373,12 +461,10 @@ header
 
       h5
         color: $color
-        width: 350px
         margin-bottom: 60px
         margin-top: 15px
 
       p
-        width: 350px
 
       .priceAndBuyBlock
         display: -webkit-flex
@@ -390,7 +476,7 @@ header
         align-items: center
         justify-content: flex-start
         padding-top: 60px
-        width: 350px
+        width: 100%
 
         p
           font-family: 'Bold', sans-serif
@@ -398,16 +484,6 @@ header
           color: $color
           margin-right: 30px
           width: auto
-
-        a
-          width: 160px
-          color: white
-          background: $color
-          text-transform: uppercase
-          font-size: 24px
-          font-family: 'Bold', sans-serif
-          text-align: center
-          padding: 10px 0
 
 .fourthScreenWrapper
   text-align: center
@@ -438,30 +514,36 @@ header
     h5
       margin-bottom: 30px
 
-    input
-      width: 380px
-      padding: 20px
-      border: 1px solid $border
-      outline: none
-      appearance: none
-      border-radius: 0
+    .relative
+      position: relative
 
-      &::placeholder
-        font-family: 'Sans', sans-serif
-        font-size: 18px
-        color: $border
+      input
+        width: 380px
+        padding: 20px
+        border: 1px solid $border
+        outline: none
+        appearance: none
+        border-radius: 0
+        margin-left: -140px
 
-    button
-      padding: 21px 20px 19px 20px
-      color: white
-      background: $color
-      border: none
-      border: 1px solid $border
-      margin-left: -6px
-      text-transform: uppercase
-      font-family: 'Bold', sans-serif
+        &::placeholder
+          font-family: 'Sans', sans-serif
+          font-size: 18px
+          color: $border
 
-    div
+      button
+        padding: 20px
+        color: white
+        background: $color
+        border: none
+        border: 1px solid $border
+        margin-left: -6px
+        text-transform: uppercase
+        font-family: 'Bold', sans-serif
+        outline: none
+        position: absolute
+
+    .underInput
       font-size: 14px
       font-family: 'Sans', sans-serif
       margin-top: 20px
@@ -472,10 +554,7 @@ header
         border-bottom: 1px solid black
 
 .copyrightBlock
-  position: absolute
-  bottom: 60px
-  left: 50%
-  transform: translateX(-50%)
+  margin-top: 30px
   text-align: center
   color: $lightgrey
   font-size: 14px

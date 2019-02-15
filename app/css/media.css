@@ -1,15 +1,104 @@
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
+  @-webkit-keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 24px; }
+    100% {
+      top: -10px; } }
+  @keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 24px; }
+    100% {
+      top: -10px; } }
   #fp-nav {
     display: none; }
   header {
-    padding: 20px;
-    display: none; }
+    padding: 15px; }
+  .scrollDowmLine {
+    bottom: 15px; }
+  .bottomNavigation {
+    bottom: 15px;
+    padding: 0 15px; }
+  .mainScreenWrapper .mainScreenInfo {
+    height: auto;
+    width: auto;
+    padding-right: 50px; }
+    .mainScreenWrapper .mainScreenInfo h1 {
+      font-size: 42px; }
+    .mainScreenWrapper .mainScreenInfo h3 {
+      font-size: 28px;
+      margin-top: 10px;
+      margin-bottom: 20px; }
+  .secondScreenWrapper .secondScreenImg {
+    padding-top: 60px; }
+    .secondScreenWrapper .secondScreenImg img {
+      height: 400px; }
+      .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 28px;
+        top: -10px; }
+  .secondScreenWrapper .secondScreenInfo h2 {
+    font-size: 42px; }
+  .secondScreenWrapper .secondScreenInfo .flexibleContent {
+    width: auto; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+      padding-left: 20px; }
+  .thirdScreenWrapper .thirdScreenInfo {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+      padding-top: 50px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy h2 {
+        font-size: 42px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+      padding: 0 20px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
+        height: 500px;
+        padding-top: 0; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+      padding-top: 50px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+        margin-top: 0; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-size: 42px;
+        margin-right: 10px; } }
+
+@media (max-width: 767px) {
+  @-webkit-keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 52px; }
+    100% {
+      top: 25px; } }
+  @keyframes movingImg {
+    0% {
+      top: -1000px; }
+    80% {
+      top: 52px; }
+    100% {
+      top: 25px; } }
+  a.buy {
+    font-size: 18px;
+    padding: 5px 30px; }
+  header .logo a {
+    font-size: 20px; }
   h1, h2 {
-    font-size: 40px; }
+    font-size: 30px; }
   h3 {
-    font-size: 26px; }
+    font-size: 20px; }
   .scrollDowmLine, .bottomNavigation {
-    display: none; }
+    bottom: 20px;
+    height: 30px;
+    -webkit-box-align: end;
+    -webkit-align-items: flex-end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding: 0 20px; }
   .circleBg {
     width: 900px;
     height: 900px; }
@@ -24,24 +113,35 @@
       top: -400px; }
     .mainScreenWrapper .mainScreenInfo {
       height: auto;
-      text-align: center; }
+      text-align: center;
+      padding-right: 0; }
+      .mainScreenWrapper .mainScreenInfo h1 {
+        font-size: 32px; }
       .mainScreenWrapper .mainScreenInfo h3 {
-        margin-top: 20px; }
+        margin-top: 10px;
+        font-size: 26px; }
       .mainScreenWrapper .mainScreenInfo a {
-        margin-top: 20px;
-        width: 100%; }
+        margin-top: 10px;
+        width: 100%;
+        display: none; }
         .mainScreenWrapper .mainScreenInfo a:before {
           left: -webkit-calc(50% - 100px);
           left: calc(50% - 100px); }
     .mainScreenWrapper .mainScreenImg {
-      margin-top: 40px; }
+      margin-top: 10px; }
       .mainScreenWrapper .mainScreenImg img {
-        height: 300px; }
+        height: 250px; }
   .secondScreenWrapper .circleBg {
     left: -440px;
     bottom: -465px; }
-  .secondScreenWrapper .secondScreenImg img {
-    height: 300px; }
+  .secondScreenWrapper .secondScreenImg {
+    padding-top: 80px;
+    padding-right: 20px; }
+    .secondScreenWrapper .secondScreenImg img {
+      height: 300px; }
+      .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 20.7px;
+        top: 25px; }
   .secondScreenWrapper .secondScreenInfo .flexibleContent {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -49,42 +149,67 @@
         -ms-flex-direction: column;
             flex-direction: column;
     width: 100%; }
+    .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+      padding-left: 0; }
     .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem {
       padding-top: 20px; }
       .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows .flexibleItem p {
-        font-size: 14px; }
+        font-size: 12px; }
   .thirdScreenWrapper .circleBg {
     left: -440px;
     top: -466px; }
-  .thirdScreenWrapper .thirdScreenInfo {
+  .thirdScreenWrapper .thirdScreenInfo .row {
     -webkit-box-align: center;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-    .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
-      display: none; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenWhereToBuy {
+    display: none; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg {
+    padding-right: 20px; }
     .thirdScreenWrapper .thirdScreenInfo .thirdScreenImg img {
       height: 300px; }
-    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
-      padding-top: 0; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
-        margin-top: 0;
-        margin-bottom: 20px; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p {
-        font-size: 14px; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
-        padding-top: 20px; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
+    padding-top: 15px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 20px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p {
+      font-size: 14px; }
+    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+      padding-top: 10px; }
+      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock p {
+        font-size: 25px; }
   .fourthScreenWrapper h2 {
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
   .fourthScreenWrapper .socials {
-    margin-bottom: 20px; }
+    margin-bottom: 10px; }
+    .fourthScreenWrapper .socials h5 {
+      margin-bottom: 10px; }
   .fourthScreenWrapper .subscribeBlock h5 {
-    font-size: 20px; }
-  .fourthScreenWrapper .subscribeBlock input {
-    width: auto; }
+    font-size: 18px;
+    margin-bottom: 10px; }
+  .fourthScreenWrapper .subscribeBlock .relative {
+    max-width: 400px;
+    margin: 0 auto; }
+    .fourthScreenWrapper .subscribeBlock .relative input {
+      width: 100%;
+      padding: 10px;
+      margin-left: 0; }
+    .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 10px;
+      position: static;
+      margin-left: 0;
+      width: 100%; }
+  .fourthScreenWrapper .subscribeBlock .underInput {
+    font-size: 12px; }
+    .fourthScreenWrapper .subscribeBlock .underInput a {
+      font-size: 12px; }
   .copyrightBlock {
     bottom: 120px;
-    width: 500px; } }
+    width: 500px;
+    font-size: 8px; } }
 
 @media (max-width: 520px) {
   .copyrightBlock {
@@ -94,21 +219,13 @@
             transform: none;
     margin-top: 20px;
     width: 100%; }
-  .thirdScreenWrapper .thirdScreenInfo {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-        -ms-flex-direction: column;
-            flex-direction: column; }
-    .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock {
-      margin-top: 20px; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
-        width: 100%; }
-      .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
-        -webkit-box-pack: justify;
-        -webkit-justify-content: space-between;
-            -ms-flex-pack: justify;
-                justify-content: space-between; } }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock h5, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock p, .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+    width: 100%; }
+  .thirdScreenWrapper .thirdScreenInfo .thirdScreenBuyBlock .priceAndBuyBlock {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between; } }
 
 @media (max-width: 423px) {
   .fourthScreenWrapper .subscribeBlock input {
@@ -116,3 +233,32 @@
   .fourthScreenWrapper .subscribeBlock button {
     width: 100%;
     margin-left: 0; } }
+
+@media screen and (orientation: landscape) and (max-width: 767px) {
+  .mainScreenWrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around; }
+  main .section {
+    overflow: hidden; }
+    main .section .secondScreenWrapper .secondScreenImg img {
+      height: 200px; }
+      main .section .secondScreenWrapper .secondScreenImg img.movingImg {
+        left: 14px; }
+    main .section .secondScreenWrapper .secondScreenInfo .flexibleContent {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row; }
+      main .section .secondScreenWrapper .secondScreenInfo .flexibleContent .flexibleRows:nth-child(2) {
+        padding-left: 20px; }
+    main .section .copyrightBlock {
+      display: none; }
+    main .section .fourthScreenWrapper .subscribeBlock .relative input, main .section .fourthScreenWrapper .subscribeBlock .relative button {
+      padding: 5px 10px; } }

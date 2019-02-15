@@ -10,11 +10,15 @@
 </head>
 <body>
 	<header>
-		<div class="logo">
-			<a href="/">gojuul</a>
-		</div>
-		<div class="buyNow">
-			buy
+		<div class="container-fluid">
+			<div class="headerWrapper">
+				<div class="logo">
+					<a href="/">gojuul</a>
+				</div>
+				<div class="buyNow">
+					<a href="#" class="buy hvr-sweep-to-right">buy</a>
+				</div>
+			</div>
 		</div>
 	</header>
 	<main class="fullpageInit">
@@ -25,7 +29,7 @@
 					<div class="mainScreenInfo">
 						<h1>Portable <br> E-Cig Charger</h1>
 						<h3>Compatible with Juul Device</h3>
-						<a href="#" class="primaryBtn">Learn more</a>
+						<a href="#" class="primaryBtn nextBtn">Learn more</a>
 					</div>
 					<div class="mainScreenImg">
 						<img data-src="img/mainScreen.png" alt="juul">
@@ -39,12 +43,13 @@
 				<div class="nextBtn">NEXT</div>
 			</div>
 		</div>
-		<div class="section">
+		<div class="section movingSection">
 			<div class="container">
 				<div class="secondScreenWrapper">
 					<div class="circleBg"></div>
 					<div class="secondScreenImg">
-						<img src="img/secondfull.png" alt="juul">
+						<img data-src="img/toOnly.png" alt="juul">
+						<img class="movingImg" data-src="img/only.png" alt="juul">
 					</div>
 					<div class="secondScreenInfo">
 						<h2>Specs</h2>
@@ -52,7 +57,7 @@
 							<div class="flexibleRows">
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/1.png" alt="juul">
+										<img data-src="img/1.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Charge time</p>
@@ -61,7 +66,7 @@
 								</div>
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/3.png" alt="juul">
+										<img data-src="img/3.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Use time</p>
@@ -70,18 +75,18 @@
 								</div>
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/5.png" alt="juul">
+										<img data-src="img/5.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Dimensions</p>
-										<p class="flexibleItemText">4 x 0.6 x 0.8 in</p>
+										<p class="flexibleItemText">75mm*22mm*17mm</p>
 									</div>
 								</div>
 							</div>
 							<div class="flexibleRows">
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/2.png" alt="juul">
+										<img data-src="img/2.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Weight</p>
@@ -90,7 +95,7 @@
 								</div>
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/4.png" alt="juul">
+										<img data-src="img/4.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Capacity</p>
@@ -99,7 +104,7 @@
 								</div>
 								<div class="flexibleItem">
 									<div class="flexibleItemImg">
-										<img src="img/6.png" alt="juul">
+										<img data-src="img/6.svg" alt="juul">
 									</div>
 									<div class="flexibleItemDesc">
 										<p class="flexibleItemTitle">Power</p>
@@ -124,19 +129,21 @@
 				<div class="thirdScreenWrapper">
 					<div class="circleBg"></div>
 					<div class="thirdScreenInfo">
-						<div class="thirdScreenWhereToBuy">
-							<h2>Where to buy</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-						</div>	
-						<div class="thirdScreenImg">
-							<img src="img/clearjuul.png" alt="juul">
-						</div>
-						<div class="thirdScreenBuyBlock">
-							<h5>Quis ipsum suspendisse ultrices gravida.</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-							<div class="priceAndBuyBlock">
-								<p>$49</p>
-								<a href="#">buy</a>
+						<div class="row">
+							<div class="thirdScreenWhereToBuy col-md-4">
+								<h2>Where to buy</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+							</div>	
+							<div class="thirdScreenImg col-md-4 col-4">
+								<img data-src="img/clearjuul.png" alt="juul">
+							</div>
+							<div class="thirdScreenBuyBlock col-md-4 col-8">
+								<h5>Quis ipsum suspendisse ultrices gravida.</h5>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+								<div class="priceAndBuyBlock">
+									<p>$49</p>
+									<a href="#" class="buy hvr-sweep-to-right">buy</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -154,20 +161,22 @@
 					<div class="socials">
 						<h5>Find us on</h5>
 						<div class="socialImgs">
-							<a href="#"><img src="img/facebook.svg" alt="juul"></a>
-							<a href="#"><img src="img/twetter.svg" alt="juul"></a>
-							<a href="#"><img src="img/instagram.svg" alt="juul"></a>
+							<a href="#"><img data-src="img/facebook.svg" alt="juul"></a>
+							<a href="#"><img data-src="img/twetter.svg" alt="juul"></a>
+							<a href="#"><img data-src="img/instagram.svg" alt="juul"></a>
 						</div>
 					</div>
 					<div class="subscribeBlock">
 						<h5>Want to get updates on GoJuul product news?</h5>
-						<input type="text" placeholder="Your Email">
-						<button>Sign Me Up</button>
-						<div>By submitting this form, I agree to this site's <a href="#">Terms of Use and Privacy Policy</a></div>
+						<div class="relative">
+							<input type="text" placeholder="Your Email">
+							<button class="hvr-sweep-to-right">Sign Me Up</button>
+						</div>
+						<div class="underInput">By submitting this form, I agree to this site's <a href="#">Terms of Use and Privacy Policy</a></div>
 					</div>
 				</div>
 				<div class="copyrightBlock">
-					© 2018 GoJuul Products, LLC. All Rights Reserved. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+					© 2018 GoJuul Products, LLC. All Rights Reserved. <br> Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 				</div>
 			</div>
 			<div class="bottomNavigation">

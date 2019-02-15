@@ -31,7 +31,7 @@ gulp.task('browser-sync', function() { // Создаем таск browser-sync
 gulp.task('scripts', function() {
 	return gulp.src([ // Берем все необходимые библиотеки
 		'app/libs/jquery/dist/jquery.min.js', // Берем jQuery
-		'app/libs/bootstrap/dist/js/bootstrap.js', // Берем Bootstrap
+		// 'app/libs/bootstrap/dist/js/bootstrap.js', // Берем Bootstrap
 		'app/libs/fullpage.js/dist/fullpage.js' // Берем fullpage.js
 		])
 		.pipe(concat('libs.min.js')) // Собираем их в кучу в новом файле libs.min.js
@@ -46,6 +46,15 @@ gulp.task('css-libs', ['sass'], function() {
 		.pipe(gulp.dest('app/css')); // Выгружаем в папку app/css
 });
 
+gulp.task('css-concat', function() {
+	return gulp.src([
+		'app/css/main.css',
+		'app/css/media.css'
+		])
+		.pipe(concat('style.css'))
+		.pipe(gulp.dest('app/css'));
+});
+
 gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']); // Наблюдение за sass файлами в папке sass
 	gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
@@ -56,10 +65,10 @@ gulp.task('clean', function() {
 	return del.sync('dist'); // Удаляем папку dist перед сборкой
 });
 
-gulp.task('build', ['clean', 'sass', 'scripts'], function() {
+gulp.task('build', ['clean', 'sass', 'scripts', 'css-concat'], function() {
 
 	var buildCss = gulp.src([ // Переносим библиотеки в продакшен
-		'app/css/main.css',
+		'app/css/style.css',
 		'app/css/libs.min.css'
 		])
 	.pipe(gulp.dest('dist/css'))
@@ -72,6 +81,9 @@ gulp.task('build', ['clean', 'sass', 'scripts'], function() {
 
 	var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
 	.pipe(gulp.dest('dist'));
+
+	var buildImg = gulp.src('app/img/*') // Переносим HTML в продакшен
+	.pipe(gulp.dest('dist/img'));
 
 });
 
